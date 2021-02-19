@@ -21,9 +21,9 @@ public class GasStationsNetworkController {
     }
 
     @PostMapping(value = "/createNetwork")
-    public GasStationsNetwork createNetwork(@RequestParam(required = false, defaultValue = "123") String name,
-                                              @RequestParam(required = false, defaultValue = "www.shop.com")String website){
-        return  gasStationsNetworkService.createNetwork(name, website);
+    public GasStationsNetwork createNetwork(@RequestParam(required = false, defaultValue = "имя") String newNameOfNetwork,
+                                              @RequestParam(required = false, defaultValue = "сайт")String website){
+        return  gasStationsNetworkService.createNetwork(newNameOfNetwork, website);
     }
     @GetMapping(value = "/getNetwork/{id}")
     public GasStationsNetwork getNetworkById(@PathVariable("id") Integer id) {
@@ -38,11 +38,11 @@ public class GasStationsNetworkController {
 
     @PatchMapping(value = "/updateNetwork/{id}")
     public GasStationsNetwork updateNetworkById(@PathVariable(value = "id") Integer id,
-                                                  @RequestParam(required = false, defaultValue = "defaultName",
-                                              name = "name") String newName,
-                                                  @RequestParam(required = false, defaultValue = "defaultWebSite",
+                                                  @RequestParam(required = false, defaultValue = "имя",
+                                              name = "nameOfNetwork") String newNameOfNetwork,
+                                                  @RequestParam(required = false, defaultValue = "сайт",
                                               name = "website") String newWebSite){
-        return gasStationsNetworkService.updateNetworkById(id, newName, newWebSite);
+        return gasStationsNetworkService.updateNetworkById(id, newNameOfNetwork, newWebSite);
     }
 
     @DeleteMapping(value = "/deleteNetwork")

@@ -16,7 +16,7 @@ public class RelatedProductsController {
     @PostMapping(value = "/createProduct")
     public RelatedProducts createProduct(@RequestParam(required = false, defaultValue = "some description")
                                      String description, @RequestParam(required = false,
-            defaultValue = "some name") String name, @RequestParam Integer category_id){
+            defaultValue = "some name") String name){
         return relatedProductsService.createProduct(name, description);
     }
 
