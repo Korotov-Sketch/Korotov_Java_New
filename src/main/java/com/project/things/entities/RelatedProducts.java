@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class RelatedProducts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer item_id;
+    Integer Product_id;
     String name;
     String description;
 
@@ -26,12 +26,12 @@ public class RelatedProducts {
         this.description = description;
     }
 
-    public Integer getItem_id() {
-        return item_id;
+    public Integer getProduct_id() {
+        return Product_id;
     }
 
-    public void setItem_id(Integer item_id) {
-        this.item_id = item_id;
+    public void setProduct_id(Integer product_id) {
+        this.Product_id = product_id;
     }
 
 
@@ -40,6 +40,6 @@ public class RelatedProducts {
 
     @Override
     public String toString() {
-        return "" + item_id + " " + description + " " + name ;
+        return "" + Product_id + " " + description + " " + name ;
     }
 }
