@@ -37,14 +37,14 @@ public class FuelStationService {
         return repo.findAll();
     }
 
-    public FuelStation updateStation(Integer shop_id, Integer newShopChain_id, String newContacts){
-        FuelStation fuelStation = repo.findById(shop_id).get();
-        GasStationsNetwork gasStationsNetwork = networkRepo.findById(shop_id).get();
+    public FuelStation updateStation(Integer station_id, String newContacts){
+        FuelStation fuelStation = repo.findById(station_id).get();
+        GasStationsNetwork gasStationsNetwork = networkRepo.findById(station_id).get();
         fuelStation.setGasStationsNetwork(gasStationsNetwork);
         fuelStation.setContacts(newContacts);
         return repo.save(fuelStation);
     }
-    public void deleteStation(Integer shop_id){
-        repo.deleteById(shop_id);
+    public void deleteStation(Integer Station_id){
+        repo.deleteById(Station_id);
     }
 }

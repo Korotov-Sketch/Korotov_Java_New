@@ -30,11 +30,11 @@ public class RelatedProductsService {
     public List<RelatedProducts> getAllProducts(){
         return repo.findAll();
     }
-    public RelatedProducts getItemByName(String name){
+    public RelatedProducts getProductByName(String name){
         return repo.findAll().stream().filter(elem -> elem.getName() == name).findFirst().get();
     }
-    public RelatedProducts updateProduct(Integer item_id, String newName, String newDescription){
-        RelatedProducts relatedProducts = repo.findById(item_id).get();
+    public RelatedProducts updateProduct(Integer product_id, String newName, String newDescription){
+        RelatedProducts relatedProducts = repo.findById(product_id).get();
         relatedProducts.setName(newName);
         relatedProducts.setDescription(newDescription);
         return repo.save(relatedProducts);

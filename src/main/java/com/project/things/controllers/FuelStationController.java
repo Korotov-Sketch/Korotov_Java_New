@@ -28,9 +28,9 @@ public class FuelStationController {
         return fuelStationService.getStationById(id);
     }
     @PatchMapping(value = "/updateStation")
-    public FuelStation updateStationById(@RequestParam Integer id, @RequestParam Integer newShopChainId,
+    public FuelStation updateStationById(@RequestParam Integer id, @RequestParam Integer newNetworkId,
                                          @RequestParam(required = false, defaultValue = "Contacts") String newContacts){
-        return fuelStationService.updateStation(id, newShopChainId, newContacts);
+        return fuelStationService.updateStation(id, newContacts);
     }
 
     @DeleteMapping(value = "/deleteStation")

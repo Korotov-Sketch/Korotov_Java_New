@@ -43,8 +43,8 @@ public class EmployeeService {
         return repo.findAll();
     }
 
-    public Employee updateEmployee(Integer employee_id, String newFname, String newPosition, Integer newSalary, String newSname, Integer newShopId){
-        FuelStation fuelStation = fuelStationRepository.findById(newShopId).get();
+    public Employee updateEmployee(Integer employee_id, String newFname, String newPosition, Integer newSalary, String newSname, Integer newStationId){
+        FuelStation fuelStation = fuelStationRepository.findById(newStationId).get();
         Employee employee = repo.findById(employee_id).get();
         employee.setFname(newFname);
         employee.setPosition(newPosition);
